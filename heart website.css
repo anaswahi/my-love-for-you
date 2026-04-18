@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, #1a001a 0%, #000000 100%);
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Main container */
+.container {
+    position: relative;
+    z-index: 10;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Title */
+.title {
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px rgba(255, 51, 102, 0.6);
+}
+
+/* Big beating heart */
+.big-heart {
+    font-size: 180px;
+    color: #ff3366;
+    animation: beat 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 40px #ff3366);
+    margin: 20px 0;
+}
+
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+}
+
+/* Typewriter message */
+.typewriter-message {
+    font-size: 2.2rem;
+    min-height: 120px;
+    font-weight: 300;
+    font-style: italic;
+    color: #ffccdd;
+    text-shadow: 0 0 15px rgba(255, 204, 221, 0.5);
+    max-width: 700px;
+}
+
+/* Button */
+.love-button {
+    margin-top: 20px;
+    padding: 18px 50px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background: linear-gradient(45deg, #ff3366, #ff6699);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 40px rgba(255, 51, 102, 0.7);
+    transition: all 0.4s ease;
+}
+
+.love-button:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 0 60px rgba(255, 51, 102, 0.9);
+}
+
+/* Floating hearts */
+.floating-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 32px;
+    color: #ff4d94;
+    opacity: 0.9;
+    animation: floatUp linear infinite;
+    filter: drop-shadow(0 0 10px #ff4d94);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 0.9; }
+    90% { opacity: 0.9; }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1f001f, #330022);
+    padding: 50px 60px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 0 80px rgba(255, 51, 102, 0.6);
+    max-width: 420px;
+    border: 3px solid #ff3366;
+}
+
+.modal-heart {
+    font-size: 90px;
+    margin-bottom: 20px;
+    animation: beat 1.5s infinite;
+}
+
+.modal-text {
+    font-size: 2rem;
+    color: #ffccdd;
+    margin-bottom: 10px;
+}
+
+.modal-subtext {
+    font-size: 1.3rem;
+    color: #ff99bb;
+    font-style: italic;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #ff99bb;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #ff3366;
+    transform: rotate(90deg);
+}
